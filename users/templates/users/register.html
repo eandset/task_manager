@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}Регистрация{% endblock %}
+{% block content %}
+<div class="auth-card mx-auto"><div class="auth-mark">＋</div><h1 class="h3 text-center">Создать аккаунт</h1><p class="text-muted text-center mb-4">Начните организовывать свои задачи</p><form method="post">{% csrf_token %}{% bootstrap_form form %}<button type="submit" class="btn btn-primary btn-block btn-lg mt-3">Зарегистрироваться</button></form><p class="text-center mt-4 mb-0">Уже есть аккаунт? <a href="{% url 'users:login' %}">Войти</a></p></div>
+{% endblock %}

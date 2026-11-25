@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Главная · Task Manager{% endblock %}
+{% block content %}
+<section class="hero p-4 p-md-5 mb-4">
+  <div class="row align-items-center">
+    <div class="col-lg-7">
+      <span class="eyebrow">ПЛАНИРУЙ · ДЕЛАЙ · ДОСТИГАЙ</span>
+      <h1 class="display-4 font-weight-bold mt-2">Всё под контролем.</h1>
+      <p class="lead text-muted mt-3">Простой менеджер задач, который помогает держать фокус и не забывать важное.</p>
+      {% if user.is_authenticated %}<a class="btn btn-primary btn-lg mt-2" href="{% url 'tasks:list' %}">Перейти к задачам</a>{% else %}<a class="btn btn-primary btn-lg mt-2" href="{% url 'users:register' %}">Начать бесплатно</a> <a class="btn btn-outline-secondary btn-lg mt-2" href="{% url 'users:login' %}">Войти</a>{% endif %}
+    </div>
+    <div class="col-lg-5 mt-4 mt-lg-0"><div class="hero-art"><div class="check-item"><span class="check-circle">✓</span><span>Разобрать задачи</span><span class="mini-tag">Сегодня</span></div><div class="check-item"><span class="check-circle">✓</span><span>Запланировать неделю</span></div><div class="check-item muted-item"><span class="check-circle empty"></span><span>Довести проект до конца</span></div><div class="progress mt-4"><div class="progress-bar" style="width:66%"></div></div><small class="text-muted mt-2 d-block">2 из 3 задач выполнено</small></div></div>
+  </div>
+</section>
+<div class="row text-center">
+  <div class="col-md-4 mb-3"><div class="feature-card h-100"><div class="feature-icon">☑</div><h5>Список задач</h5><p class="text-muted mb-0">Все дела собраны в одном месте.</p></div></div>
+  <div class="col-md-4 mb-3"><div class="feature-card h-100"><div class="feature-icon">⌛</div><h5>Сроки и приоритеты</h5><p class="text-muted mb-0">Не упускайте важное и срочное.</p></div></div>
+  <div class="col-md-4 mb-3"><div class="feature-card h-100"><div class="feature-icon">↗</div><h5>Прогресс</h5><p class="text-muted mb-0">Отмечайте сделанное и двигайтесь дальше.</p></div></div>
+</div>
+{% endblock %}
